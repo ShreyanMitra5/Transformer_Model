@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from transformers import BertTokenizer, BertForSequenceClassification, AdamW
+from transformers import BertTokenizer, BertForSequenceClassification
+from torch.optim import AdamW
 from torch.utils.data import DataLoader, TensorDataset
 import torch
 from tqdm import tqdm
@@ -97,7 +98,7 @@ def main():
     
     # Load data
     print('Loading data...')
-    headlines, labels = load_data('path/to/your/dataset.csv')  # Replace with your dataset path
+    headlines, labels = load_data('C:/Users/Shrey/OneDrive/Desktop/los_altos/losaltos/WELFake_Dataset.csv')
     
     # Split data
     train_headlines, val_headlines, train_labels, val_labels = train_test_split(
